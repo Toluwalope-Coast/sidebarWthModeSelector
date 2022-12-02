@@ -1,0 +1,390 @@
+/* Table of Content */
+
+/* 1.   Global variables*/
+
+/* 2.   Basic resets */
+
+/* 3.   General styling */
+
+/* Table of Content ends*/
+
+/****************************************************************************************************************/ /****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+
+/* 1.   Global variables*/
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --clr-background-night: hsl(242, 47%, 34%);
+  --clr-active-background-night: hsl(245, 58%, 51%);
+  --clr-background-light: hsl(220, 14%, 96%);
+  --clr-active-background-light: hsl(216, 12%, 84%);
+  --clr-background-dark: hsl(221, 39%, 11%);
+  --clr-active-background-dark: hsl(217, 19%, 27%);
+
+  --clr-night: hsl(218, 15%, 74%);
+  --clr-active-night: var(--clr-night);
+  --clr-light: hsl(221, 39%, 11%);
+  --clr-active-light: var(--clr-light);
+  --clr-dark: hsl(218, 11%, 65%);
+  --clr-active-dark: hsl(218, 95%, 95%);
+
+  --clr-border: hsl(0, 0%, 29%);
+}
+
+/* 1.   Global variables ends */
+
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+
+/* 2.   Basic resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: muz;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Remove all underline decoration from anchor tags */
+a {
+  text-decoration: none;
+}
+
+/* Remove border from all buttons and center the text within */
+
+button,
+button:is(:hover, :focus-visible) {
+  border: 0;
+  line-height: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2.   Basic resets ends */
+
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+
+/* 3.  General styling */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: no-wrap;
+  border: 0;
+}
+.top-bar {
+  position: sticky;
+  z-index: 1;
+  margin-inline-start: max(20%, 11.75em);
+  width: 100% - max(20%, 11.75em);
+  background-color: var(--clr-active-background-dark);
+  color: var(--clr-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.5rem;
+}
+.title {
+  margin-inline: 2rem;
+}
+.notification {
+  display: flex;
+  align-items: center;
+}
+.notification > * {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: white;
+  margin-inline-end: 0.8rem;
+  border: 4px solid white;
+  border-radius: 50%;
+}
+.notification > span {
+  font-size: 10rem;
+}
+.sidebar {
+  position: fixed;
+  width: max(20%, 11.75em);
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-background-dark);
+  color: var(--clr-dark);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sidebar.night {
+  background-color: var(--clr-background-night);
+  color: var(--clr-night);
+}
+.sidebar.light {
+  background-color: var(--clr-background-light);
+  color: var(--clr-light);
+}
+.sidebar a {
+  color: var(--clr-dark);
+  font-family: "Mulish", sans-serif;
+}
+.sidebar.night a {
+  color: var(--clr-night);
+}
+.sidebar.light a {
+  color: var(--clr-light);
+}
+.sidebar > * {
+  width: 80%;
+  padding-block: 1em;
+  margin-block-end: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.primary-navigation {
+  padding-block-end: 0;
+}
+.sidebar-bottom {
+  border: none;
+  justify-content: center;
+}
+.logo {
+  font-size: 1.5rem;
+  margin-inline-end: 1em;
+  padding-inline-start: 0.5em;
+  cursor: pointer;
+}
+.list {
+  width: 100%;
+  position: relative;
+}
+.tool-tip-text {
+  display: none;
+}
+.list-item-link {
+  display: inline-block;
+  width: 100%;
+  margin-block-end: 1em;
+  padding: 0.5em 0 0.5em 0.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.sidebar .list-item-link.active,
+.sidebar .list-item-link:hover {
+  background-color: var(--clr-active-background-dark);
+  color: var(--clr-active-dark);
+}
+.sidebar.night .list-item-link.active,
+.sidebar.night .list-item-link:hover {
+  background-color: var(--clr-active-background-night);
+  color: var(--clr-active-night);
+}
+.sidebar.light .list-item-link.active,
+.sidebar.light .list-item-link:hover {
+  background-color: var(--clr-active-background-light);
+  color: var(--clr-active-light);
+}
+.list-item .fas {
+  font-size: 1rem;
+  display: inline-block;
+  width: 1.7rem;
+}
+.sidebar-bottom {
+  display: flex;
+  align-items: center;
+}
+.sidebar-bottom > * {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-inline-end: 0.5rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 5px;
+  cursor: pointer;
+}
+li[aria-label="Dark"] {
+  background-color: var(--clr-background-dark);
+}
+li[aria-label="Night"] {
+  background-color: var(--clr-background-night);
+}
+li[aria-label="Light"] {
+  background-color: var(--clr-background-light);
+}
+
+/* tablets (medium and small screen)  */
+@media screen and (max-width: 1007px) and (min-width: 641px) {
+  .top-bar {
+    margin-inline-start: 4rem;
+    width: 100% - 4rem;
+  }
+  .sidebar {
+    width: 4rem;
+  }
+  .sidebar > * {
+    margin-block: 0;
+  }
+  .sidebar-top {
+    justify-content: center;
+  }
+  .logo {
+    padding: 0;
+    margin-inline-end: 0;
+  }
+  .list-item-text,
+  .brand-name {
+    display: none;
+  }
+  .sidebar-bottom {
+    flex-direction: column;
+  }
+  .sidebar-bottom > * {
+    margin-block-end: 5px;
+  }
+  .list {
+    position: relative;
+    display: inline-block;
+  }
+
+  /******* Tooltip for the nav lists to give better ux on the icon **********/
+  /* Tooltip container */
+  .tool-tip {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Tooltip text */
+  .tool-tip-text {
+    display: none;
+    width: 7.5rem;
+    background-color: var(--clr-active-dark);
+    color: var(--clr-active-background-dark);
+    text-align: center;
+    padding: 0.3em 0;
+    border-radius: 6px;
+    font-weight: 700;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 100;
+    right: -7.92rem;
+    top: 0;
+
+    /* Fade in tooltip */
+    transition: display 0.5s;
+  }
+
+  /* Tooltip arrow */
+  .tool-tip-text::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    border: 5px;
+    border-style: solid;
+    border-color: transparent var(--clr-active-background-dark) transparent
+      transparent;
+  }
+  .sidebar.light .tool-tip-text::after {
+    border-color: transparent var(--clr-active-background-light) transparent
+      transparent;
+  }
+  .sidebar.light .tool-tip-text {
+    background-color: var(--clr-active-light);
+    color: var(--clr-active-background-light);
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tool-tip:hover .tool-tip-text {
+    display: inline-block;
+  }
+}
+
+/* mobile Phones */
+
+@media (max-width: 640px) {
+  .top-bar {
+    margin-inline-start: 0;
+    width: 100%;
+  }
+  .sidebar {
+    /* position: fixed;
+    width: 11.75em;
+    z-index: 1; */
+    display: none;
+  }
+  /* .sidebar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6); 
+  }*/
+  .tool-tip-text {
+    display: none;
+  }
+}

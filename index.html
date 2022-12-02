@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive SideBar with Night, Dark And Light Mode</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="title">Dashboard</div>
+      <div class="notification">
+        <a href="#"><i class="fas fa-bell-on" aria-hidden="true"></i><span class="visually-hidden">Message notification</span></a>
+       <a href="#"><i class="fa-solid fa-headset" aria-hidden="true"></i> <span class="visually-hidden">Customer care link</span></a>
+       <a href="#"><img src="./images/profie.jpg" alt="profile image"></a>
+      </img>
+    </header>
+    <header class="sidebar">
+      <div class="sidebar-top">
+        <i class="fab fa-sketch logo" aria-hidden="true"></i>
+        <a href="#">
+          <span class="brand-name">App Name</span>
+        </a>
+      </div>
+      <nav class="primary-navigation">
+        <ul class="list" role="list" aria-label="menu-list">
+          <li class="list-item" aria-label="dashboard">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-home" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Dashboard</span>
+              <span class="list-item-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="Search">
+            <a class="list-item-link active tool-tip" href="#">
+              <i class="fas fa-search" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Search</span>
+              <span class="list-item-text">Search</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="Insights">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-stream" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Insights</span>
+              <span class="list-item-text">Insights</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="docs">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-book" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Docs</span>
+              <span class="list-item-text">Docs</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="community">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Community</span>
+              <span class="list-item-text">Community</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="tools">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-toolbox" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Tools</span>
+              <span class="list-item-text">Tools</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="market">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Market</span>
+              <span class="list-item-text">Market</span>
+            </a>
+          </li>
+          <li class="list-item" aria-label="resources">
+            <a class="list-item-link tool-tip" href="#">
+              <i class="fas fa-question-circle" aria-hidden="true"></i>
+              <span class="tool-tip-text" aria-hidden="true">Resources</span>
+              <span class="list-item-text">Resources</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <ul
+        class="sidebar-bottom"
+        role="list"
+        aria-label="app-mode"
+        aria-hidden="true"
+      >
+        <li class="dark" aria-label="Dark"></li>
+        <li class="night" aria-label="Night"></li>
+        <li class="light" aria-label="Light"></li>
+      </ul>
+    </header>
+    <script src="js/script.js"></script>
+  </body>
+</html>
